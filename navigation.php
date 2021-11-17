@@ -8,6 +8,7 @@
         <a href="?leht=lego">Lego joonis</a>
         <a href="?leht=puzzle">puzzle</a>
         <a href="?leht=calculator">Kalkulaator</a>
+        <a href="?leht=pildit">pildit</a>
     </ul>
     </div>
 </nav>

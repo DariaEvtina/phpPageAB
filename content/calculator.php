@@ -1,3 +1,4 @@
+<section>
 <h1>Valluuta Kalkulaator var 1</h1>
 <form name="var1" onclick="validateForm()" method="post">
     <label for="kogus">Sissetaja kogus:</label>
@@ -22,7 +23,7 @@
 </form>
 <br>
 <img src="img/Nimetu.png" alt="pilt" id="pilt">
-
+</section>
 <section>
 <h1>Valluuta kalkulaator var 3</h1>
 <form name="var3">
