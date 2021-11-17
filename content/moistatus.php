@@ -1,5 +1,4 @@
 <h1>... Mõistatus</h1>
-<a href="../../../../Downloads/phpALGUS/TEST.php">Tagasi.. Ülesanne</a>
 <br>
 <?php
 echo "<h2>Matemaatika tehed - Mõistatus</h2>";
@@ -22,7 +21,7 @@ echo "Kui teisest avr lahutada esimene arvuga, siis vastus on ".($arv2-$arv1);
 echo "<br>";
 echo "Kui kahe arvude korrutis, siis vastus on ".($arv1*$arv2);
 echo"<br>";
-echo "<a href='../../../../Downloads/phpALGUS/harjutused/vastus.php'> Õiged vastused</a>";
+echo "<a href='harjutused/vastus.php'> Õiged vastused</a>";
 echo "<br>";
 echo "<h1>Arva ära EESTI LINNANIMI</h1>";
 $nimi="Tallinn";
