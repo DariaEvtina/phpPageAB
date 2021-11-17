@@ -21,7 +21,7 @@
     <br>
     <img src="png/9.png" alt="pilt" width="5%" id="pilt18" onclick="pildiValik(this)">
 </div>
-<div class="rightcolumn">
+
 <div id="choice">
     Valitud pilt:
     <br>
