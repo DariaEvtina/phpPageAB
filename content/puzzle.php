@@ -1,4 +1,5 @@
 <h1 style="margin-left: 430px">Puzzle</h1>
+
 <div id="buttons">
     Vali sobiv pilt:
     <br>
@@ -20,27 +21,27 @@
     <br>
     <img src="png/9.png" alt="pilt" width="5%" id="pilt18" onclick="pildiValik(this)">
 </div>
-
+<div class="rightcolumn">
 <div id="choice">
     Valitud pilt:
     <br>
     <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt19">
 </div>
 
-<div id="field">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt1" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt2" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt3" onclick="hiireVajutus(this)">
-    <br>
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt4" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt5" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt6" onclick="hiireVajutus(this)">
-    <br>
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt7" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt8" onclick="hiireVajutus(this)">
-    <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt9" onclick="hiireVajutus(this)">
+    <div id="field">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt1" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt2" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt3" onclick="hiireVajutus(this)">
+        <br>
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt4" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt5" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt6" onclick="hiireVajutus(this)">
+        <br>
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt7" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt8" onclick="hiireVajutus(this)">
+        <img src="png/tuhik.png" alt="pilt" width="5%" id="pilt9" onclick="hiireVajutus(this)">
+    </div>
 </div>
-
 <div id="end">
     <img src="png/images.png" alt="pilt" width="80%" id="pic">
 </div>

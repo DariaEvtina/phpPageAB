@@ -23,7 +23,7 @@
 <br>
 <img src="img/Nimetu.png" alt="pilt" id="pilt">
 
-<br>
+<section>
 <h1>Valluuta kalkulaator var 3</h1>
 <form name="var3">
     <label for="kogus3">Sissetaja kogus:</label>
@@ -35,7 +35,8 @@
     <br>
     <div id="vastus3">Siia tuleb vastus....</div>
 </form>
-<br>
+</section>
+<section>
 <h1>Valluuta kalkulaator var 2</h1>
 <form name="var2">
     <label for="kogus4">Sisetaja kogus: </label>
@@ -49,7 +50,8 @@
     </select>
     <div id="vastus4">Siia tuleb vastus....</div>
 </form>
-<BR>
+</section>
+<section>
 <h1>oma kalkulator</h1>
 <form name="var2" id="var2">
     <label for="kogus2">Sisetaja kogus: </label>
@@ -67,5 +69,5 @@
 </form>
 <br>
 <img src="img/Nimetu.png" alt="pilt" id="pilt1">
-<script src="kalkulatorS.js"></script>
+</section>
 <a href="https://github.com/DariaEvtina/calculator">GitHub</a>
