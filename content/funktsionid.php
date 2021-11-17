@@ -18,7 +18,8 @@ function get_vanus(){
         $synd=$_POST['age'];
         $diff=date_diff(date_create($synd), date_create('16.11.21'));
         echo '<br>';
-        echo $diff->format('%y').'aastat vana';
+        echo $diff->format(
+            '%y').'aastat vana';
     }
 }
 function GEThooaeg(){
