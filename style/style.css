@@ -12,7 +12,8 @@ body {
 .header {
     padding: 30px;
     text-align: center;
-    background: #dddddd;
+    background: lightslategray;
+    color: #f1f1f1;
 }
 
 .header h1 {
@@ -22,7 +23,7 @@ body {
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: slategray;
+    background-color: #304150;
 }
 
 /* Style the topnav links */
@@ -81,7 +82,7 @@ body {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: lightslategray;
     margin-top: 20px;
 }
 
@@ -99,4 +100,50 @@ body {
         float: none;
         width: 100%;
     }
+}
+canvas#tahvel{
+    width:400px;
+    height:250px;
+    background-color:lightslategray;
+}
+#buttons {
+    background-color: #ddd ;
+    width: fit-content;
+    border: solid 1px lightslategray;
+}
+
+#buttons img {
+    margin: auto;
+    width: 70px;
+}
+
+#field {
+    border: solid 1px lightslategray;
+    position: absolute;
+    left: 400px;
+    top: 550px;
+}
+#field img {
+    width: 100px;
+    padding: -10px;
+}
+
+#end {
+    position: absolute;
+    left: 900px;
+    top: 350px;
+}
+
+#choice {
+    background-color: lightslategray;
+    border: solid 1px #f1f1f1;
+    width: fit-content;
+    position: absolute;
+    top: 350px;
+    left: 495px;
+    text-align: center;
+}
+
+#choice img {
+    width: 120px;
 }

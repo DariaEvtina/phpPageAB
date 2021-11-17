@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>evtina php leht</title>
+    <script src="js/legoScript.js"></script>
+    <script src="js/puzzleScript.js"></script>
+
 </head>
 <body>
 <?php
@@ -23,6 +26,6 @@
 <?php
     include('footer.php');
 ?>
-
+<script src="js/calculatorScript.js"></script>
 </body>
 </html>
