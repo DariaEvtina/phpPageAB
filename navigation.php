@@ -6,9 +6,10 @@
         <a href="?leht=dateFuctions">Aja funktsionid</a>
         <a href="?leht=TEST">Harjutused</a>
         <a href="?leht=lego">Lego joonis</a>
-        <a href="?leht=puzzle">puzzle</a>
+        <a href="?leht=puzzle">Puzzle</a>
         <a href="?leht=calculator">Kalkulaator</a>
-        <a href="?leht=pildit">pildit</a>
+        <a href="?leht=pildit">Pildit</a>
+        <a href="?leht=ab_leaht/lisamineNaitamine">loomad</a>
     </ul>
     </div>
 </nav>
