@@ -9,7 +9,7 @@
         <a href="?leht=puzzle">Puzzle</a>
         <a href="?leht=calculator">Kalkulaator</a>
         <a href="?leht=pildit">Pildit</a>
-        <a href="?leht=admebaas_leaht/lisamineNaitamine">loomad</a>
+        <a href="?leht=lisamineNaitamine">loomad</a>
     </ul>
     </div>
 </nav>
