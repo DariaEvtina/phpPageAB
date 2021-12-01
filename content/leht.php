@@ -82,6 +82,10 @@ if(isset($_REQUEST['kustuta'])){
         $kask->bind_param('i', $_REQUEST['id']);
         $kask->bind_result($id, $nimi, $pilt);
         $kask->execute();
+        echo "<ul>";
+        while($kask->fetch()){
+            echo "<li><a href='$_SERVER[PHP_SELF]?id=$id'>".$nimi."</a></li>";
+        }
         echo "<strong>".$nimi."</strong>";
         echo "<br>";
         echo "<img src='$pilt' alt='pilt'>";
