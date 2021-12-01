@@ -141,6 +141,8 @@ canvas#tahvel{
     width: fit-content;
     position: absolute;
     text-align: center;
+    top: 350px;
+    left: 495px;
 }
 
 #choice img {
