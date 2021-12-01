@@ -10,7 +10,7 @@ if(!empty($_REQUEST['loomanimi'])) {
     $kask = $yhendus->prepare('INSERT INTO loomad(nimi,kirjeldus) VALUES(?)');
     $kask->bind_param("s", $_REQUEST['loomanimi'], $_REQUEST['kirjeldus']);
     $kask->execute();
-    header("Location: basename($_SERVER[REQUEST_URI]),'leht')");
+    header("Location: $_SERVER[PHP_SELF]");
     if(isset($_REQUEST['kustuta'])){
         $kask=$yhendus->prepare("DELETE FROM loomad WHERE id=?");
         $kask->bind_param("i",$_REQUEST['kustuta']);
@@ -47,24 +47,21 @@ while($kask->fetch()){
     echo"<td>$id</td>";
     echo"<td>$nimi</td>";
     echo"<td>$kirjeldus</td>";
-    echo"<td><a href='basename($_SERVER[REQUEST_URI]),'leht')?kustuta=$id'>xxx</td>";
+    echo"<td><a href='$_SERVER[PHP_SELF]?kustuta=$id'>xxx</td>";
     echo "</tr>";
 }
 echo "</table>";
 ?>
-<br>
-<div class="rightcolumn">
-<form action=".<?=clearsVarsExept(basename(($_SERVER['REQUEST_URI']),'leht'))?>" method="post">
+<br><br>
+<form action="" method="post">
     <label for="loomanimi">Loomanimi</label>
     <input type="text" name="loomanimi" id="loomanimi">
     <label for="kirjeldus">kirjeldus</label>
-    <input type="text" name="kirjeldus" id="loomanimi">
+    <input type="text" name="kirjeldus" id="kirjeldus">
     <input type="submit" value="Lisa">
 </form>
-</div>
 <?php
 $yhendus->close();
 ?>
 </body>
 </html>
-/*CREATE TABLE puud( id int primary key AUTO_INCREMENT, nimipuu varchar(50), pilt text )*/

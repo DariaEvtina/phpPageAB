@@ -10,6 +10,7 @@
         <a href="?leht=calculator">Kalkulaator</a>
         <a href="?leht=pildit">Pildit</a>
         <a href="?leht=lisamineNaitamine">loomad</a>
+        <a href="https://evtina20.thkit.ee/phpLeht/content/puu_leht.php" target="_blank">Puud</a>
     </ul>
     </div>
 </nav>
