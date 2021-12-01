@@ -1,5 +1,5 @@
 <?php
-require('conf.php');
+require('conflaps.php');
 session_start();
 if(!isset($_SESSION['tuvastamine'])){
     header('Location: loginAB.php');
@@ -8,10 +8,10 @@ if(!isset($_SESSION['tuvastamine'])){
 global $yhendus;
 //lisamine INSERT INTO
 if(isset($_REQUEST['lapsvorm'])){
-    $kask=$yhendus->prepare('INSERT INTO puud(nimipuu, pilt) VALUES (?, ?)');
+    $kask=$yhendus->prepare('INSERT INTO laps(nimi, pilt) VALUES (?, ?)');
 // "s"- string
 // $_REQUEST['loomanimi']- запрос в текстовый ящик input name="loomanimi"
-    $kask->bind_param("ss", $_REQUEST['puunimi'], $_REQUEST['pilt']);
+    $kask->bind_param("ss", $_REQUEST['lapsnimi'], $_REQUEST['pilt']);
     $kask->execute();
 // изменяет адресную строку
 //$_SERVER[PHP_SELF] - до имени файла
@@ -19,14 +19,8 @@ if(isset($_REQUEST['lapsvorm'])){
 }
 //kustutsmine
 if(isset($_REQUEST['kustuta'])){
-    $kask=$yhendus->prepare("DELETE FROM puud WHERE id=?");
+    $kask=$yhendus->prepare("DELETE FROM laps WHERE id=?");
     $kask->bind_param("i",$_REQUEST['kustuta']);
-    $kask->execute();
-}
-//puu muutmine
-if(isset($_REQUEST['muuda'])){
-    $kask=$yhendus->prepare("UPDATE FROM puud SET nimipuu=?,pilt=? WHERE id=?");
-    $kask->bind_param("ssi", $_REQUEST['nimi'], $_REQUEST['pilt'], $_REQUEST['muudamis']);
     $kask->execute();
 }
 ?>
@@ -45,11 +39,11 @@ if(isset($_REQUEST['muuda'])){
     </form>
 </div>
 <div class="leftcolumn">
-    <h2>Puud</h2>
+    <h2>LAPS</h2>
     <?php
     //näitame puunimed
     global $yhendus;
-    $kask=$yhendus->prepare("SELECT id, nimipuu FROM puud");
+    $kask=$yhendus->prepare("SELECT id, nimi FROM laps");
     $kask->bind_result($id, $nimi);
     $kask->execute();
     echo "<ul>";
@@ -57,12 +51,14 @@ if(isset($_REQUEST['muuda'])){
         echo "<li><a href='$_SERVER[PHP_SELF]?id=$id'>".$nimi."</a></li>";
     }
     echo "</ul>";
-    echo "<a href='$_SERVER[PHP_SELF]?lisa=jah'>Lisa...</a>";
-    if(isSet($_REQUEST['lisa'])){
+    if($_SESSION['onAdmin']==1) {
+        echo "<a href='$_SERVER[PHP_SELF]?lisa=jah'>Lisa...</a>";
+    }
+    if(isset($_REQUEST['lisa']) && $_SESSION['onAdmin']==1){
         ?>
         <form action="" method="post">
             <input type="hidden" name="lapsvorm" value="jah">
-            <label for="lapsnimi">Puunimi</label>
+            <label for="lapsnimi">Lapsnimi</label>
             <input type="text" name="lapsnimi" id="lapsnimi">
             <br>
             <label for="pilt">PildiLink</label>
@@ -77,49 +73,28 @@ if(isset($_REQUEST['muuda'])){
 
 </div>
 <div class="rightcolumn">
-    <h3>Puupilt</h3>
+    <h3>pilt</h3>
     <?php
     //näitame puunimed
     global $yhendus;
     if(isset($_REQUEST['id'])){
-        $kask=$yhendus->prepare("SELECT id, nimipuu, pilt FROM puud WHERE id=?");
+        $kask=$yhendus->prepare("SELECT id, nimi, pilt FROM laps WHERE id=?");
         $kask->bind_param('i', $_REQUEST['id']);
         $kask->bind_result($id, $nimi, $pilt);
         $kask->execute();
-
-        if($kask->fetch()){
-            if(isset($_REQUEST['muutmine']) && $_SESSION['onAdmin']==1){
-                echo"
-                <form action=''>
-                <h2>Puu admene muutamine</h2>
-                Puunimi:
-                <input type='hidden' name='muudamis' value='$id'>
-                <input type='text' name='nimi' id='nimi' value='$nimi'>
-                <br>
-                Pilt(peab olema pildilingi aadress
-                <textarea name='pilt' id='pilt' value='$pilt' cols='20'></textarea>
-                <br>
-                <input type='submit' value='muuda'>
-                </form>
-                ";
-
-            }
-            else{
-                echo "<strong>".$nimi."</strong>";
-                echo "<br>";
-                echo "<img src='$pilt' alt='pilt'>";
-                echo "<br>";
-                if($_SESSION['onAdmin']==1){
+        echo "<strong>".$nimi."</strong>";
+        echo "<br>";
+        echo "<img src='$pilt' alt='pilt'>";
+        echo "<br>";
+        if($_SESSION['onAdmin']==1){
                     echo "<a href ='$_SERVER[PHP_SELF]?kustuta=$id'>kustuta</a>";
-                    echo"<br>";
-                    echo "<a href ='$_SERVER[PHP_SELF]?id=$id&muutmine=jah'>muuda</a>";
-                }
-            }
         }
-        else {
+
+        }
+    else {
             echo "Viga";
-        }
     }
+
     $yhendus->close();
     ?>
 </div>
