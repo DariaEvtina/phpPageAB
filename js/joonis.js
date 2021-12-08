@@ -1,3 +1,5 @@
+let t;
+
 function kingitus(){
     t=document.getElementById("tahvel1").getContext("2d");
     t.beginPath();
@@ -46,7 +48,7 @@ function kingitus(){
 }
 
 function jyulupuu(){
-    var t=document.getElementById("tahvel1").getContext("2d");
+    let t = document.getElementById("tahvel1").getContext("2d");
     //joon valge vÃ¤rviga ja laiusega
     t.beginPath();
     t.moveTo(130,10);//x, y alguspunkt
@@ -92,13 +94,14 @@ function jyulupuu(){
 
 }
 function kustutus(){
-    var t=document.getElementById("tahvel1").getContext("2d");
+    let t = document.getElementById("tahvel1").getContext("2d");
     t.clearRect(0,0,400,250); //x,y,laius, kÃµrgus
 
 }
-var x=100, y=10, r=3;
-var ysamm=10, xsamm=0, ykiirendus=0.2;
-var t, g; //tahvel, graafiline kontekst
+
+let x = 100, y = 10, r = 3;
+let ysamm = 10, xsamm = 0, ykiirendus = 0.2;
+let g; //tahvel, graafiline kontekst
 function algus(){
     t=document.getElementById("tahvel1");
     g=t.getContext("2d");
@@ -164,15 +167,15 @@ function liigu(){
     joonista();
 }
 function hiirAlla(e){
-    var tahvlikoht=t.getBoundingClientRect();
-    var hx=e.clientX-tahvlikoht.left;
-    var hy=e.clientY-tahvlikoht.top;
+    const tahvlikoht = t.getBoundingClientRect();
+    const hx = e.clientX - tahvlikoht.left;
+    const hy = e.clientY - tahvlikoht.top;
     x=hx;
     y=hy;
     ysamm=0;
 }
 function jyulukaunistused(){
-    var t=document.getElementById("tahvel1").getContext("2d");
+    const t = document.getElementById("tahvel1").getContext("2d");
     t.beginPath();
     t.fillStyle="white";
     t.arc(130,25,5,0,2*Math.PI,true);//x, y, R arc-duga
